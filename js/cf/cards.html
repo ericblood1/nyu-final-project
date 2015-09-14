@@ -1,0 +1,21 @@
+<div id="cards">
+<div id="rec">Showing drinks with: </div>
+<div id="showMore">SHOW MORE</div>
+
+<div class="searchBar">
+  <input id="searchBarInput" ng-model="searchFor" size="100" placeholder="Enter drink ingredients here.."  ng-model-options="{ debounce: 200}"/>
+</div>
+	  <span class="floatImg"></span>	  
+	  <div class="card" ng-repeat="drink in totalDrinks | filter:search | limitTo : 100">
+                   <div class="star">&nbsp;</div>
+                   <!--<div class="plus">&nbsp;</div>-->
+		<h2 class="drinkname">{{drink.name}}</h2>
+		<hr />
+		<h3>Ingredients</h3>
+		<span class="drinkingredients" ng-bind-html="drink.ingredients"></span>
+		<h3 class="topSpace">Mixing Instructions:</h3>
+		<span class="drinkmixinginstructions">{{ drink.mixinginstructions}}</span>
+		<div class="drinkid">{{ drink.id }}</div>
+	  </div>
+	  		<div id='nrf'>please wait while the menu loads</div>
+	</div>
